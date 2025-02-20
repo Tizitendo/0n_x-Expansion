@@ -43,6 +43,8 @@ portal:onStep(function(inst)
     end
     if portalData.frameNum > 35 then
         GM.stage_goto(Stage.find(NAMESPACE, "bulwarksAmbry"))
+        local Director = gm._mod_game_getDirector()
+        Director.stages_passed = Director.stages_passed - 1
         inst:destroy()
     end
 end)
