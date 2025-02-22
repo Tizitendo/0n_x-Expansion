@@ -53,6 +53,8 @@ end)
 --     Alarm.create(myFunc2, 10, self)
 -- end)
 
+--gimme ChildG
+
 local BeatProvidence = false
 gm.post_script_hook(gm.constants.enemy_stats_init, function(self, other, result, args)
     if (self.object_index == gm.constants.oBoss1 or self.object_index == gm.constants.oBoss3 or self.object_index ==

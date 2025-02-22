@@ -2,6 +2,7 @@
 Idk description here
 
 ## Special Thanks To
+* yokucasper for item sprites
 * The Return Of Modding Discord
 
 ## Contact

@@ -1,3 +1,6 @@
+--[[
+gimme StrangePrism
+]]
 
 local portalSpawn = Item.new(NAMESPACE, "portalSpawn", true)
 portalSpawn:toggle_loot(false)

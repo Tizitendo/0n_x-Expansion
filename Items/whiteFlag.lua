@@ -4,6 +4,7 @@ give_item OnyxExpansion-whiteFlag
 whiteFlag:set_tier(Item.TIER.uncommon)
 whiteFlag:set_loot_tags(Item.LOOT_TAG.category_utility)
 whiteFlag:set_sprite(Resources.sprite_load(NAMESPACE, "whiteFlag", PATH.."/Assets/Items/whiteFlag.png", 1, 15, 15))
+
 local whiteFlagObject = Object.new(NAMESPACE, "whiteFlagObject", Object.PARENT.interactable)
 --whiteFlagObject.obj_sprite = gm.constants.sEfWarbanner
 whiteFlagObject.obj_sprite = Resources.sprite_load(NAMESPACE, "whiteFlagObject", PATH.."/Assets/Items/whiteFlagObject.png", 7, 15, 20)

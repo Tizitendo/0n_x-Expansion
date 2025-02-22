@@ -13,10 +13,8 @@ Callback.add(Callback.TYPE.onStageStart, NAMESPACE .. "BrokenChest-onStageStart"
     local function WaitForInit()
         -- local chests = Instance.find_all(Instance.chests)
         local chests = Instance.find_all({gm.constants.oChest1, gm.constants.oChest2})
-        --local numChests = math.random(0, #chests)
-        -- local numChests = #chests
         for i = 1, #chests do
-            if math.random(1, 20) <= 2 + DISTORTION then
+            if math.random(1, 20) <= 2 + DISTORTION or false then
                 local randomChest = math.random(1, #chests)
                 chests[randomChest]:get_data().broken = true
                 -- chests[randomChest]:get_data().sparkTimer = math.random(30, 180)

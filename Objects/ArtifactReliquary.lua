@@ -27,6 +27,7 @@ artifactReliquary:onStep(function(inst)
             local RemoveArtifactSlot = math.random(1, #playerData.ActiveArtifacts)
             RunArtifact.remove(playerData.ActiveArtifacts[RemoveArtifactSlot])
             Item.get_random(Item.TIER.rare):create(inst.x, inst.y)
+            table.remove(playerData.ActiveArtifacts, RemoveArtifactSlot)
             DISTORTION = DISTORTION + 1
             local difficulty = Difficulty.wrap(GM._mod_game_getDifficulty())
             difficulty:set_scaling(difficulty.diff_scale, difficulty.general_scale, difficulty.point_scale + 0.5)
