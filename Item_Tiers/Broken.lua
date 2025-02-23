@@ -19,12 +19,14 @@ table.insert(item_tiers, brokenTier)
 
 local broken_pool = gm.new_struct()
 broken_pool.is_equipment_pool = false
-log.warning(#treasure_loot_pools)
-broken_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
+-- broken_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
+broken_pool.available_drop_pool = gm.ds_list_create()
 broken_pool.index = TIER_BROKEN_COMMON
-broken_pool.drop_pool = 117 + 2 * #treasure_loot_pools
+-- broken_pool.drop_pool = 117 + 2 * #treasure_loot_pools
+broken_pool.drop_pool = gm.ds_list_create()
 broken_pool.item_tier = TIER_BROKEN_COMMON
-broken_pool.command_crate_object_id = 800 + #treasure_loot_pools
+-- broken_pool.command_crate_object_id = 800 + #treasure_loot_pools
+broken_pool.command_crate_object_id = gm.ds_list_create()
 table.insert(treasure_loot_pools, broken_pool)
 
 -- Uncommon
@@ -45,12 +47,14 @@ table.insert(item_tiers, brokenTier)
 
 local broken_pool = gm.new_struct()
 broken_pool.is_equipment_pool = false
-log.warning(#treasure_loot_pools)
-broken_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
+-- broken_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
+broken_pool.available_drop_pool = gm.ds_list_create()
 broken_pool.index = TIER_BROKEN_UNCOMMON
-broken_pool.drop_pool = 117 + 2 * #treasure_loot_pools
+-- broken_pool.drop_pool = 117 + 2 * #treasure_loot_pools
+broken_pool.drop_pool = gm.ds_list_create()
 broken_pool.item_tier = TIER_BROKEN_UNCOMMON
-broken_pool.command_crate_object_id = 800 + #treasure_loot_pools
+-- broken_pool.command_crate_object_id = 800 + #treasure_loot_pools
+broken_pool.command_crate_object_id = gm.ds_list_create()
 table.insert(treasure_loot_pools, broken_pool)
 
 -- Rare
@@ -71,10 +75,12 @@ table.insert(item_tiers, brokenTier)
 
 local broken_pool = gm.new_struct()
 broken_pool.is_equipment_pool = false
-log.warning(#treasure_loot_pools)
-broken_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
+-- broken_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
+broken_pool.available_drop_pool = gm.ds_list_create()
 broken_pool.index = TIER_BROKEN_RARE
-broken_pool.drop_pool = 117 + 2 * #treasure_loot_pools
+-- broken_pool.drop_pool = 117 + 2 * #treasure_loot_pools
+broken_pool.drop_pool = gm.ds_list_create()
 broken_pool.item_tier = TIER_BROKEN_RARE
-broken_pool.command_crate_object_id = 800 + #treasure_loot_pools
+-- broken_pool.command_crate_object_id = 800 + #treasure_loot_pools
+broken_pool.command_crate_object_id = gm.ds_list_create()
 table.insert(treasure_loot_pools, broken_pool)

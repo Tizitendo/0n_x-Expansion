@@ -17,9 +17,12 @@ Initialize(function()
     local treasure_loot_pools = Global.treasure_loot_pools
     if #treasure_loot_pools == 7 then
         local notier_pool = gm.new_struct()
-        notier_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
-        notier_pool.drop_pool = 117 + 2 * #treasure_loot_pools
-        notier_pool.command_crate_object_id = 800 + #treasure_loot_pools
+        -- notier_pool.available_drop_pool = 118 + 2 * #treasure_loot_pools
+        notier_pool.available_drop_pool = gm.ds_list_create()
+        -- notier_pool.drop_pool = 117 + 2 * #treasure_loot_pools
+        notier_pool.drop_pool = gm.ds_list_create()
+        -- notier_pool.command_crate_object_id = 800 + #treasure_loot_pools
+        notier_pool.command_crate_object_id = gm.ds_list_create()
         table.insert(treasure_loot_pools, notier_pool)
     end
 
@@ -32,6 +35,7 @@ Initialize(function()
     end)
 
     local folders = {"Misc", "Item_Tiers", "Elites", "Actors", "Objects", "Gameplay", "Items"}
+    -- local folders = {"Misc", "Item_Tiers"}
 
     for _, folder in ipairs(folders) do
         -- NOTE: this includes filepaths within subdirectories of the above folders
@@ -43,4 +47,5 @@ Initialize(function()
             end
         end
     end
+    GM.elite_generate_palettes()
 end)

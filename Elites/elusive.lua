@@ -8,7 +8,7 @@ eliteElusive.healthbar_icon = sprite_icon
 eliteElusive.palette = sprite_palette
 eliteElusive.blend_col = Color.AQUA
 
-GM.elite_generate_palettes()
+-- GM.elite_generate_palettes()
 
 local itemEliteOrbElusive = Item.new(NAMESPACE, "eliteOrbElusive", true)
 itemEliteOrbElusive.is_hidden = true
