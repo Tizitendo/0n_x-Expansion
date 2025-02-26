@@ -3,19 +3,26 @@ give_item OnyxExpansion-hooksOfHeresy
 ]] local hooksOfHeresy = Item.new(NAMESPACE, "hooksOfHeresy")
 hooksOfHeresy:set_tier(TIER_BROKEN_UNCOMMON)
 hooksOfHeresy:set_loot_tags(Item.LOOT_TAG.category_damage)
-hooksOfHeresy:set_sprite(Resources.sprite_load(NAMESPACE, "hooksOfHeresy", PATH.."/Assets/Items/hooksOfHeresy.png", 1, 16, 16))
+hooksOfHeresy:set_sprite(Resources.sprite_load(NAMESPACE, "hooksOfHeresy", PATH .. "/Assets/Items/hooksOfHeresy.png", 1,
+    16, 16))
 
 local slicingMaelstrom = Skill.new(NAMESPACE, "slicingMaelstrom")
+slicingMaelstrom.sprite = Resources.sprite_load(NAMESPACE, "slicingMaelstromSkill", PATH.."/Assets/Skills/slicingMaelstrom.png", 1, 0, 0)
 
 local maelstrom = Object.new(NAMESPACE, "maelstrom")
--- Maelstrom:set_sprite(bulletSprite)
-maelstrom:set_sprite(gm.constants.sGiantJellyBulletPurple)
+maelstrom:set_sprite(Resources.sprite_load(NAMESPACE, "slicingMaelstromBullet", PATH.."/Assets/Objects/slicingMaelstrom.png", 1, 12, 12))
+-- maelstrom:set_sprite(gm.constants.sGiantJellyBulletPurple)
 maelstrom:set_depth(-1)
 
 hooksOfHeresy:onAcquire(function(actor, stack)
-    -- slicingMaelstrom.max_stock = 12 * stack
-    slicingMaelstrom.cooldown = 180 * stack
+    slicingMaelstrom.cooldown = 180 * stack + 60 * 3
     actor:add_skill_override(1, slicingMaelstrom)
+end)
+
+hooksOfHeresy:onRemove(function(actor, stack)
+    if stack <= 1 then
+        actor:remove_skill_override(1, slicingMaelstrom)
+    end
 end)
 
 slicingMaelstrom:onActivate(function(actor)
@@ -34,10 +41,10 @@ hooksOfHeresy:onPostStep(function(actor, stack)
     end
 
     local bulletData = maelstrom:create(actor.x, actor.y):get_data()
-    bulletData.pH = actor.hold_facing_direction_xscale * actorData.hooksCharge * 0.05
+    bulletData.pH = actor.hold_facing_direction_xscale * actorData.hooksCharge * 0.05 + actor.hold_facing_direction_xscale * 1
     bulletData.parent = actor
     bulletData.cooldown = 0
-    bulletData.lifetime = 300 * stack
+    bulletData.lifetime = 180 * stack
     actorData.hooksCharge = 0
 end)
 
@@ -49,15 +56,8 @@ maelstrom:onStep(function(bullet)
 
     -- Actor collision
     if bulletData.cooldown == 0 then
-        local actors = bullet:get_collisions(gm.constants.pActorCollisionBase)
-        for _, actor in ipairs(actors) do
-            if (actor.team and actor.team ~= bulletData.parent.team) or
-                (actor.parent and actor.parent.team and actor.parent.team ~= bulletData.parent.team) then
-                actor:apply_dot(1, bulletData.parent, 1, 1)
-                -- self:sound_play_at(soundHit, 1.0, 1.0, self.x, self.y, nil)
-            end
-            bulletData.cooldown = 10
-        end
+        bulletData.parent:fire_explosion(bullet.x, bullet.y, 100, 100, 1)
+        bulletData.cooldown = 15
     else
         bulletData.cooldown = bulletData.cooldown - 1
     end

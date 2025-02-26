@@ -5,5 +5,5 @@ toxicSymbiote:set_sprite(Resources.sprite_load(NAMESPACE, "toxicSymbiote", PATH.
 
 toxicSymbiote:onStatRecalc(function(actor, stack)
     actor.attack_speed = actor.attack_speed + 0.3
-    actor.hp_regen = math.max(actor.hp_regen - 0.01 * stack, 0)
+    actor.hp_regen = actor.hp_regen - 0.015 * stack
 end)

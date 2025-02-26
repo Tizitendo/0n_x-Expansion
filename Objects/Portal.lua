@@ -6,7 +6,9 @@ local portalSpawn = Item.new(NAMESPACE, "portalSpawn", true)
 portalSpawn:toggle_loot(false)
 
 local portal = Object.new(NAMESPACE, "portal", Object.PARENT.interactable)
-portal.obj_sprite  = gm.constants.sImpPortal
+-- portal.obj_sprite  = gm.constants.sImpPortal
+portal.obj_sprite  = Resources.sprite_load(NAMESPACE, "Portal", PATH.."/Assets/Objects/Portal.png", 36, 100, 100)
+local portalMask = Resources.sprite_load(NAMESPACE, "portal_mask", PATH.."/Assets/Objects/portal_mask.png", 1, 25, 50)
 portal.obj_depth   = 1
 
 Callback.add(Callback.TYPE.onKillProc, NAMESPACE.."Portal-onKillProc", function(victim, killer)
@@ -29,6 +31,7 @@ Object.find(NAMESPACE, "portalSpawn"):onStep(function(inst)
         local portalInst = portal:create(inst.x, inst.y - 30)
         portalInst:get_data().frameNum = -1
         portalInst.image_speed = 0.15
+        portalInst.mask_index = portalMask
         inst:destroy()
     end
 end)

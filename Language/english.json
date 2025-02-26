@@ -4,60 +4,6 @@
         "illusion.name": "Illusion %s"
     },
     "item" : {
-        "hamsterWheel" : {
-			"name" : "Hamster Wheel",
-			"pickup": "Start running after a short time of moving</c>",
-			"description": "<y>+30% movement speed</c> <c_stack>(+30% per stack)</c> when continuously moving in a direction for over 1.5 seconds.",
-			"destination": "Mars",
-			"date": "11/7/2056",
-			"story": "Nobody actually cares about this, right?",
-			"priority": "Standard"
-		},
-        "tickingGrenade" : {
-			"name" : "Ticking Grenade",
-			"pickup": "Occasionally loose a grenade, watch out as it hurts you too</c>",
-			"description": "On hit 5% chance to drop a grenade, dealing <y>+500% damage</c> <c_stack>(+500% per stack)</c> to enemies and half of that to you.",
-			"destination": "Mars",
-			"date": "11/7/2056",
-			"story": "Be careful! Those grenades are antiques. The slightest wrong movement could set them off!",
-			"priority": "Standard"
-		},
-        "tinkerKit" : {
-			"name" : "Tinker Kit",
-			"pickup": "When entering a stage, destroy a random item and create new broken items out of it</c>",
-			"description": "On stage start, loose a random item and <y>gain 2</c> <c_stack>(+1 per stack) random broken items of the same rarity</c>.",
-			"destination": "Mars",
-			"date": "11/7/2056",
-			"story": "quantity over quality",
-			"priority": "Standard"
-		},
-        "toxicSymbiote" : {
-			"name" : "Toxic Symbiote",
-			"pickup": "reduced regen for increased firerate</c>",
-			"description": "Health regeneration <y>reduced by 0.01</c> <c_stack>(-0.01 per stack), but firerate increased by <y>+30% <c_stack>(+30% per stack)</c>.",
-			"destination": "Mars",
-			"date": "11/7/2056",
-			"story": "More like parasite",
-			"priority": "Standard"
-		},
-        "tungstenCube" : {
-			"name" : "Tungsten Cube",
-			"pickup": "deal increased damage while on ground and reduced damage while in the air</c>",
-			"description": "While grounded <y>+30% damage</c> <c_stack>(+30% per stack), while airborne <y>-10% damage <c_stack>(-10% per stack)</c>.",
-			"destination": "Richard\nBehiel,\nEarth",
-			"date": "08/11/2019",
-			"story": "This cube cured my mortality\nAll the people here who buy this tungsten cube to admire it’s surreal heft have precisely the wrong mindset. I, in my exhaled wisdom and unbridled ambition, bought this cube to become fully accustomed to the intensity of it’s density, to make the fact of it’s weight bearable and in fact normal to me, so that all the world around me may fade into an arena of gravitational inconsequence. And it has worked, to profound success. I have carried this tungsten with me, have grown attached to the downward pull of it’s small form, it’s desire to be one with the floor. This force has become so normal to me that lifting any other object is like cotton candy, or a fluffy pillow. Big burly men who pump iron seem to me only like little children who lift mere aluminum.\nI can hardly remember the days before I became a man of tungsten. How distant those days seem now, how burdened by the apparent heaviness of everyday objects. I laugh at the philistines who still operate in a world devoid of tungsten, their shoulders thin and unempowered by the experience of bearing tungsten. Ha, what fools, blissful in their ignorance, anesthetized by their lack of real struggle, devoid of passion\nNietzsche once said that a man who has a why can bear almost any how. But a man who has a tungsten cube can bear any object less dense, and all this talk of why and how becomes unnecessary.\nSchopenhauer once said that man takes the limits of his own field of vision for the limits of the world. Tungsten expands man’s field of vision by showing him an example of increased density, in comparison to which the everyday objects he was formerly accustomed to gain a light and airy quality. Who can lament the tragedy of life, when surrounded by such lightweight objects? Who can cry in a world of styrofoam and cushions?\nHave you yet understood? This is no ordinary metal. In this cube is the alchemical potential to transform your world, by transforming your expectations. Those who have not yet held the cube in their hands and mouths will not understand, they live in a world of normal density, like Plato’s cave dwellers. Those who have opened their mind the the density of tungsten will shift their expectations of weight and density accordingly.\nTo give this cube a rating of anything less than five stars would be to condemn life itself. Who am I, as a mere mortal, to judge the most compact of affordable metals? No. I say gratefully to whatever grand being created this universe: good job on the tungsten. It sure is dense.\nI sit here with my tungsten cube, transcendent over death itself. For insofar as this tungsten cube will last forever, I am in the presence of immortality.",
-			"priority": "Standard"
-		},
-        "whiteFlag" : {
-			"name" : "White Flag",
-			"pickup": "Chance to summon a slowing white flag on kill. Consecutive kills increase the flag radius</c>",
-			"description": "On kill 5% chance to summon a flag that slows enemies by 50%. Consecutive kills increase the flag radius by 50. Flag lasts <y>10 seconds <c_stack>(+5 seconds per stack)</c>.",
-			"destination": "Mars",
-			"date": "11/7/2056",
-			"story": "The box says: \"Confuse your enemies by deploying a remote white flag on their side\". Yeah right, like that would ever work.",
-			"priority": "Standard"
-		},
 		"disposableReactor" : {
 			"name" : "Disposable Reactor",
 			"pickup": "Activating a interactable spawns a reactor nearby. Everything inside the reactor takes increased damage</c>",
@@ -85,23 +31,117 @@
 			"story": "You never know when you need enough energy to power a city",
 			"priority": "Standard"
 		},
-		"visionsOfHeresy" : {
-			"name" : "Visions of Heresy",
-			"pickup": "Replace your Primary Skill with Hungering Gaze.</c>",
-			"description": "Fire a flurry of tracking shards that detonate after a delay, dealing <y>100%</c> damage. Hold up to 12 charges <c_stack>(+12 per stack)</c> with a cooldown of 1/4 second <c_stack>(+1/4 second per stack). </c>.",
+		"essenceOfHeresy" : {
+			"name" : "Essence of Heresy",
+			"pickup": "Replace your Special Skill with Ruin.</c>",
+			"description": "Dealing damage adds a stack of Ruin for 10 seconds. Activating the skill detonates all Ruin stacks at unlimited range, dealing 300% damage plus 100% damage per stack of Ruin. Recharges after 15 (+5 per stack) seconds. </c>",
 			"destination": "Mars",
 			"date": "11/7/2056",
 			"story": "You never know when you need enough energy to power a city",
 			"priority": "Standard"
 		},
-		"Hooks of Heresy" : {
+        "hamsterWheel" : {
+			"name" : "Hamster Wheel",
+			"pickup": "Start running after a short time of moving</c>",
+			"description": "<y>+30% movement speed</c> <c_stack>(+30% per stack)</c> when continuously moving in a direction for over 1.5 seconds.",
+			"destination": "Mars",
+			"date": "11/7/2056",
+			"story": "Nobody actually cares about this, right?",
+			"priority": "Standard"
+		},
+		"hooksOfHeresy" : {
 			"name" : "Hooks of Heresy",
-			"pickup": "Replace your Secondary Skill with Slicing Maelstrom.</c>",
-			"description": "Charge up a projectile that deals idk% damage per second to nearby enemies. Recharges after 5 (+5 per stack) seconds.  </c>.",
+			"pickup": "Replace your Utility Skill with Shadowfade.</c>",
+			"description": "Fade away, becoming intangible and gaining +30% movement speed. Health regen +0.5. Lasts 3 (+3 per stack) seconds.</c>",
 			"destination": "Mars",
 			"date": "11/7/2056",
 			"story": "You never know when you need enough energy to power a city",
 			"priority": "Standard"
+		},
+		"stridesOfHeresy" : {
+			"name" : "Strides of Heresy",
+			"pickup": "Replace your Secondary Skill with Slicing Maelstrom.</c>",
+			"description": "Charge up a projectile that deals 400% damage per second to nearby enemies. Projectile lasts 3 seconds <c_stack>(3 seconds per stack)</c> Recharges after 5 (+5 per stack) seconds.</c>",
+			"destination": "Mars",
+			"date": "11/7/2056",
+			"story": "You never know when you need enough energy to power a city",
+			"priority": "Standard"
+		},
+        "tickingGrenade" : {
+			"name" : "Ticking Grenade",
+			"pickup": "Occasionally loose a grenade, watch out as it hurts you too</c>",
+			"description": "On hit 5% chance to drop a grenade, dealing <y>+500% damage</c> <c_stack>(+500% per stack)</c> to enemies and half of that to you.",
+			"destination": "Mars",
+			"date": "11/7/2056",
+			"story": "Be careful! Those grenades are antiques. The slightest wrong movement could set them off!",
+			"priority": "Standard"
+		},
+        "tinkerKit" : {
+			"name" : "Tinker Kit",
+			"pickup": "When entering a stage, convert a random item into a broken item</c>",
+			"description": "On stage start, loose a random item <c_stack>(+1 per stack)</c> and <y>gain 1</c> <c_stack>(+1 per stack)</c> random broken item of the same rarity</c>.",
+			"destination": "Mars",
+			"date": "11/7/2056",
+			"story": "quantity over quality",
+			"priority": "Standard"
+		},
+        "toxicSymbiote" : {
+			"name" : "Toxic Symbiote",
+			"pickup": "reduced regen for increased firerate</c>",
+			"description": "Health regeneration <y>reduced by 0.015</c> <c_stack>(-0.015 per stack), but firerate increased by <y>+30% <c_stack>(+30% per stack)</c>.",
+			"destination": "Mars",
+			"date": "11/7/2056",
+			"story": "More like parasite",
+			"priority": "Standard"
+		},
+        "tungstenCube" : {
+			"name" : "Tungsten Cube",
+			"pickup": "deal increased damage while on ground and reduced damage while in the air</c>",
+			"description": "While grounded <y>+30% damage</c> <c_stack>(+30% per stack), while airborne <y>-15% damage <c_stack>(-15% per stack)</c>.",
+			"destination": "Richard\nBehiel,\nEarth",
+			"date": "08/11/2019",
+			"story": "This cube cured my mortality\nAll the people here who buy this tungsten cube to admire it’s surreal heft have precisely the wrong mindset. I, in my exhaled wisdom and unbridled ambition, bought this cube to become fully accustomed to the intensity of it’s density, to make the fact of it’s weight bearable and in fact normal to me, so that all the world around me may fade into an arena of gravitational inconsequence. And it has worked, to profound success. I have carried this tungsten with me, have grown attached to the downward pull of it’s small form, it’s desire to be one with the floor. This force has become so normal to me that lifting any other object is like cotton candy, or a fluffy pillow. Big burly men who pump iron seem to me only like little children who lift mere aluminum.\nI can hardly remember the days before I became a man of tungsten. How distant those days seem now, how burdened by the apparent heaviness of everyday objects. I laugh at the philistines who still operate in a world devoid of tungsten, their shoulders thin and unempowered by the experience of bearing tungsten. Ha, what fools, blissful in their ignorance, anesthetized by their lack of real struggle, devoid of passion\nNietzsche once said that a man who has a why can bear almost any how. But a man who has a tungsten cube can bear any object less dense, and all this talk of why and how becomes unnecessary.\nSchopenhauer once said that man takes the limits of his own field of vision for the limits of the world. Tungsten expands man’s field of vision by showing him an example of increased density, in comparison to which the everyday objects he was formerly accustomed to gain a light and airy quality. Who can lament the tragedy of life, when surrounded by such lightweight objects? Who can cry in a world of styrofoam and cushions?\nHave you yet understood? This is no ordinary metal. In this cube is the alchemical potential to transform your world, by transforming your expectations. Those who have not yet held the cube in their hands and mouths will not understand, they live in a world of normal density, like Plato’s cave dwellers. Those who have opened their mind the the density of tungsten will shift their expectations of weight and density accordingly.\nTo give this cube a rating of anything less than five stars would be to condemn life itself. Who am I, as a mere mortal, to judge the most compact of affordable metals? No. I say gratefully to whatever grand being created this universe: good job on the tungsten. It sure is dense.\nI sit here with my tungsten cube, transcendent over death itself. For insofar as this tungsten cube will last forever, I am in the presence of immortality.",
+			"priority": "Standard"
+		},
+		"visionsOfHeresy" : {
+			"name" : "Visions of Heresy",
+			"pickup": "Replace your Primary Skill with Hungering Gaze.</c>",
+			"description": "Fire a flurry of tracking shards that detonate after a delay, dealing <y>120%</c> damage. Hold up to 12 charges <c_stack>(+12 per stack)</c> with a cooldown of 1/4 second <c_stack>(+1/4 second per stack). </c>.",
+			"destination": "Mars",
+			"date": "11/7/2056",
+			"story": "You never know when you need enough energy to power a city",
+			"priority": "Standard"
+		},
+        "whiteFlag" : {
+			"name" : "White Flag",
+			"pickup": "Chance to summon a slowing white flag on kill. Consecutive kills increase the flag radius</c>",
+			"description": "On kill 5% chance to summon a flag that slows enemies by 50%. Consecutive kills increase the flag radius by 50. Flag lasts <y>10 seconds <c_stack>(+5 seconds per stack)</c>.",
+			"destination": "Mars",
+			"date": "11/7/2056",
+			"story": "The box says: \"Confuse your enemies by deploying a remote white flag on their side\". Yeah right, like that would ever work.",
+			"priority": "Standard"
 		}
-    }
+    },
+	"skill" : {
+		"hungeringGaze": {
+			"name": "Hungering Gaze",
+			"description": "Fire a flurry of tracking shards that detonate after a delay, dealing <y>120%</c> damage. Hold up to 12 charges <c_stack>(+12 per stack)</c> with a cooldown of 1/4 second <c_stack>(+1/4 second per stack). </c>."
+		},
+		"slicingMaelstrom": {
+			"name": "Slicing Maelstrom",
+			"description": "Charge up a projectile that deals 400% damage per second to nearby enemies. Projectile lasts 3 seconds <c_stack>(3 seconds per stack)</c> Recharges after 5 (+5 per stack) seconds.</c>"
+		},
+		"shadowFade": {
+			"name": "Shadow Fade",
+			"description": "Fade away, becoming intangible and gaining +30% movement speed. Health regen +0.5. Lasts 3 (+3 per stack) seconds.</c>"
+		},
+		"ruin": {
+			"name": "Ruin",
+			"description": "Dealing damage adds a stack of Ruin for 10 seconds. Activating the skill detonates all Ruin stacks at unlimited range, dealing 300% damage plus 100% damage per stack of Ruin. Recharges after 15 (+5 per stack) seconds. </c>"
+		},
+		"ruinBoosted": {
+			"name": "Ruin",
+			"description": "Dealing damage adds a stack of Ruin for 10 seconds. Activating the skill detonates all Ruin stacks at unlimited range, dealing 300% damage plus 130% damage per stack of Ruin. Recharges after 15 (+5 per stack) seconds. </c>"
+		}
+	}
 }
