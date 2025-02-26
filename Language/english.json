@@ -106,7 +106,7 @@
 		"visionsOfHeresy" : {
 			"name" : "Visions of Heresy",
 			"pickup": "Replace your Primary Skill with Hungering Gaze.</c>",
-			"description": "Fire a flurry of tracking shards that detonate after a delay, dealing <y>120%</c> damage. Hold up to 12 charges <c_stack>(+12 per stack)</c> with a cooldown of 1/4 second <c_stack>(+1/4 second per stack). </c>.",
+			"description": "Fire a flurry of tracking shards that detonate after a delay, dealing <y>120% <c_stack>(+20% per stack)</c> damage. Hold up to 12 charges with a cooldown of 1/4 second <c_stack>(+1/4 second per stack). </c>.",
 			"destination": "Mars",
 			"date": "11/7/2056",
 			"story": "You never know when you need enough energy to power a city",
@@ -125,7 +125,7 @@
 	"skill" : {
 		"hungeringGaze": {
 			"name": "Hungering Gaze",
-			"description": "Fire a flurry of tracking shards that detonate after a delay, dealing <y>120%</c> damage. Hold up to 12 charges <c_stack>(+12 per stack)</c> with a cooldown of 1/4 second <c_stack>(+1/4 second per stack). </c>."
+			"description": "Fire a flurry of tracking shards that detonate after a delay, dealing <y>120% <c_stack>(+20% per stack)</c> damage. Hold up to 12 charges with a cooldown of 1/4 second <c_stack>(+1/4 second per stack). </c>."
 		},
 		"slicingMaelstrom": {
 			"name": "Slicing Maelstrom",

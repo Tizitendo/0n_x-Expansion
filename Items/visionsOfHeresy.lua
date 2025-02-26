@@ -1,5 +1,6 @@
 --[[
 give_item OnyxExpansion-visionsOfHeresy
+give_item heavenCracker
 ]] local visionsOfHeresy = Item.new(NAMESPACE, "visionsOfHeresy")
 visionsOfHeresy:set_tier(TIER_BROKEN_COMMON)
 visionsOfHeresy:set_loot_tags(Item.LOOT_TAG.category_damage)
@@ -19,8 +20,9 @@ visionsBullet:set_depth(-1)
 
 local attackSlow = false
 visionsOfHeresy:onAcquire(function(actor, stack)
-    hungeringGaze.max_stock = 12 * stack
-    hungeringGaze.cooldown = 15 + 15 * stack
+    hungeringGaze.max_stock = 12
+    hungeringGaze.damage = 1 + 0.2 * stack
+    hungeringGaze.cooldown = 15 + 10 * stack
     actor:add_skill_override(0, hungeringGaze)
 end)
 
@@ -35,7 +37,7 @@ visionsOfHeresy:onStatRecalc(function(actor, stack)
 end)
 
 visionsOfHeresy:onPostStep(function(actor, stack)
-    if hungeringGaze.required_stock ~= 1 then
+    if hungeringGaze.required_stock > 1 then
         actor:freeze_active_skill(0)
         if not attackSlow and actor:is_grounded() then
             attackSlow = true
@@ -61,6 +63,7 @@ hungeringGaze:onActivate(function(actor)
     if actor:is_authority() then
         -- this needs to be done, otherwise actor.hold_facing_direction_xscale sometimes gets read as a bool
         actor.hold_facing_direction_xscale = gm.int64(actor.hold_facing_direction_xscale)
+        local damage = actor:skill_get_damage(hungeringGaze)
         if not GM.skill_util_update_heaven_cracker(actor, damage, actor.image_xscale) then
             local buff_shadow_clone = Buff.find("ror", "shadowClone")
             for i = 0, actor:buff_stack_count(buff_shadow_clone) do
@@ -73,7 +76,7 @@ hungeringGaze:onActivate(function(actor)
         end
     end
     hungeringGaze.required_stock = hungeringGaze.max_stock + 1
-    Alarm.create(ResetSlow, math.max(15 / actor.attack_speed, 1))
+    Alarm.create(ResetSlow, math.max(math.floor(15 / actor.attack_speed), 1))
 end)
 
 visionsBullet:onStep(function(bullet)
@@ -99,13 +102,14 @@ visionsBullet:onStep(function(bullet)
     local actors = bullet:get_collisions(gm.constants.pBulletActorCollisionBase)
     for _, actor in ipairs(actors) do
         if (actor.team and actor.team ~= bulletData.parent.team) or (actor.parent and actor.parent.team and actor.parent.team ~= bulletData.parent.team) then
-            bulletData.parent:fire_explosion(bullet.x - 10, bullet.y - 10, 10, 10, 1.2)
+            bulletData.parent:fire_explosion(bullet.x - 10, bullet.y - 20, 10, 20, actor:skill_get_damage(hungeringGaze))
             bullet:destroy()
             return
         end
     end
 
     if bullet:is_colliding(gm.constants.pSolidBulletCollision) then
+        bulletData.parent:fire_explosion(bullet.x - 10, bullet.y - 20, 10, 20, 1.2)
         bullet:destroy()
         -- self:sound_play_at(soundHit, 1.0, 1.0 + gm.random_range(-0.1, 0.1), self.x, self.y, nil)
     end
